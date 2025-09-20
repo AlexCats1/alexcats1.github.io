@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <!-- style allows us to put styles here inside the html. we can also put the styles in an css file. should check that later.-->
+    <style>
+        body {
+            margin: 10
+        }
+
+
+        .header_grid {
+            /* we can make a grid like this, putting .class_name, and then inside of it we put display: grid to specify that we are creating a grid. then we can declare the rows and columns, */
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns auto;
+        }
+
+        .projects_grid {
+            display: grid;
+            grid-template-rows: 120px auto auto;
+            grid-template-columns 1fr 1fr;
+        }
+
+
+        header {
+            /* inside of the different classes, we can specify which column and row they are going to use.*/
+            grid-column: 1;
+            /* we can use 1 / 3 to specify what span this element or class will have. in this case we want it to go from  column one just before column 3, so it will span column 1 and 2. this can be changed if we have more columns or rows*/
+            grid-row: 1;
+            background: #00c707;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .projects_header {
+            grid-column: 1/4;
+            grid-row: 1;
+            background: #8400ff;
+            text-align: left;
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        .projects_showcase{
+            grid-column: 1/4;
+            grid-row: 2;
+            background: #cf0000;
+        }
+
+        footer {
+            grid-column: 1;
+            grid-row: 3;
+            padding: 10px;
+            background: #0088ff;
+        }
+    </style>
+
+    <title>AlexCats1</title>
+    <!-- with this we can define a title for the page, the little name that appears on the window when it's above.-->
+</head>
+
+<body>
+    <div class="header_grid">
+        <header>
+            <h1>Hello! I'm Javier Ledesma</h1>
+            <h3>Also known online as AlexCats1</h3>
+        </header>
+    </div>
+
+    <div class="projects_grid">
+        <p class = "projects_header">My projects</p>
+
+        <p class = "projects_showcase">sdaasd</p>
+    </div>
+
+
+    <div clas="bottom_grid">
+        <footer>
+            <p>&copy; 2025, AlexCats1</p>
+            <!-- this is used to put a footer for the website, like a message under the whole page.-->
+        </footer>
+    </div>
+
+    <div></div>
+</body>
+
+</html>
