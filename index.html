@@ -9,128 +9,50 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        .main_title_grid {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: linear-gradient(130deg, #383838, #161616);
-        }
-
-        .main_title {
-            font-size: 45px;
-            color: white;
-            margin: 20px 0 20px 0;
-        }
-
+        .main_title_flex,
+        .projects_flex,
+        .about_me_flex,
         .page_footer {
-            display: flex;
-            background: linear-gradient(130deg, #383838, #161616);
+            background: #272727;
+            border: 5px solid #333;
+            border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
             color: white;
+        }
+
+        /* main title*/
+        .main_title_flex {
+            display: flex;
             flex-direction: column;
             align-items: center;
+            border: none;
         }
 
-        .main_subtitle {
-            font-size: 30px;
-            color: white;
-            margin: 0 0 10px 0;
-        }
-
+        /* projects*/
         .projects_flex {
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: linear-gradient(130deg, #383838, #161616);
-            border: 5px solid #333;
             border-left: none;
             border-right: none;
             border-top: none;
-            border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
         }
 
+        .projects_showcase_image:hover {
+            transform: scale(1.03);
+        }
+
+        /* about me */
         .about_me_flex {
             display: flex;
-            background: linear-gradient(130deg, #383838, #161616);
             flex-direction: column;
             align-items: center;
-
-            border: 5px solid #333;
             border-left: none;
             border-right: none;
-            border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
         }
 
-        .projects_title {
-            grid-column: 1;
-            grid-row: 1;
-            font-size: 35px;
-            color: white;
-        }
-
-        .section_subtitle {
-            font-size: 30px;
-            margin: 0;
-            background: -webkit-linear-gradient(right, #ffbd42, #3ef108);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 40% 40%;
-        }
-
-        .projects_showcase {
-            grid-column: 1;
-            grid-row: 2;
-
-            display: grid;
-            grid-template-columns: 1fr, 1fr;
-            grid-template-rows: 1fr, 1fr;
-
-            margin: 20px 0 20px 20px;
-        }
-
-        .project1 {
-            grid-column: 1;
-            grid-row: 1;
-            margin: 20px;
-            padding: 10px;
-        }
-
-        .project2 {
-            grid-column: 2;
-            grid-row: 1;
-            margin: 20px;
-            padding: 10px;
-        }
-
-        .project3 {
-            grid-column: 1;
-            grid-row: 2;
-            margin: 20px;
-            padding: 10px;
-        }
-
-        .project4 {
-            grid-column: 2;
-            grid-row: 2;
-            margin: 20px;
-            padding: 10px;
-        }
-
-        .section_text {
-            font-size: 20px;
-            color: white;
-        }
-
-        .projects_showcase_image {
-            border-radius: 10px;
-            max-height: 400px;
-            width: 100%;
-            height: 100%;
-            border: 5px solid;
-            padding: 10px;
-            border-right: none;
-            border-left: none;
-            border-top: none;
-            border-image: linear-gradient(90deg, #ff41e6, #ffb7ff00) 1;
+        .about_me_categories_flex {
+            display: flex;
+            flex-direction: column;
         }
 
         .about_me_images {
@@ -143,19 +65,6 @@
         .about_me_images:hover {
             transform: scale(1.1);
             /* when the about_me_images are hovered, we can scale them to have a little animation.*/
-        }
-
-        .about_me_title {
-            font-size: 35px;
-            background: -webkit-linear-gradient(right, #ffbd42, #3ef108);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 20px 0 20px 0;
-        }
-
-        .about_me_categories_flex {
-            display: flex;
-            flex-direction: column;
         }
 
         .image_container_about_me_languages {
@@ -172,40 +81,151 @@
         }
 
         .about_me_images_alexcats1_logo {
-            max-height: 300px;
-            height: 300px;
-            width: 300px;
+            max-height: 250px;
+            height: 250px;
+            width: 250px;
             object-fit: cover;
-            border-radius: 10px;
-            margin: 0 0 20px 0;
+            margin: 20px 0 30px 0;
         }
+
+        .about_me_images_alexcats1_logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* page footer*/
+        .page_footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: none;
+        }
+
+        .main_title,
+        .main_subtitle {
+            color: rgb(255, 255, 255);
+        }
+
+        .main_title {
+            font-size: 45px;
+            margin: 20px 0 20px 0;
+        }
+
+        .main_subtitle {
+            font-size: 30px;
+            margin: 0 0 10px 0;
+        }
+
+        .section_subtitle_medium,
+        .section_subtitle_small,
+        .section_subtitle_large,
+        .section_title {
+            font-size: 30px;
+            margin: 0;
+            background: -webkit-linear-gradient(right, #ffbd42, #3ef108);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section_title {
+            font-size: 35px;
+            margin: 30px 0 30px 0;
+        }
+
+        .section_subtitle_medium {
+            background-size: 38% 100%;
+        }
+
+        .section_subtitle_small {
+            background-size: 26% 100%;
+        }
+
+        .section_subtitle_large {
+            background-size: 60% 100%;
+        }
+
+        .projects_showcase {
+            grid-column: 1;
+            grid-row: 2;
+
+            display: grid;
+            grid-template-columns: 1fr, 1fr;
+            grid-template-rows: 1fr, 1fr;
+
+            margin: 20px 0 20px 20px;
+        }
+
+        .project1,
+        .project2,
+        .project3,
+        .project4 {
+            /* we can group classes and add attributes to them like this, so we don't have to add to every single group.*/
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .project1 {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .project2 {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .project3 {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .project4 {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .section_text {
+            font-size: 20px;
+            color: white;
+        }
+
+        .projects_showcase_image {
+            max-height: 400px;
+            width: 100%;
+            height: 100%;
+            border: 5px solid;
+            border-right: none;
+            border-left: none;
+            border-top: none;
+            border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
+        }
+
     </style>
     <title>AlexCats1 Portfolio</title>
 </head>
 
 <body>
 
-    <div class="main_title_grid">
+    <div class="main_title_flex">
         <p class="main_title">Javier Ledesma | AlexCats1</p> <!-- title of the page-->
         <p class="main_subtitle">Portfolio</p>
     </div>
 
     <div class="about_me_flex">
-        <p class="about_me_title">About me</p>
+        <p class="section_title">About me</p>
 
         <div class="about_me_categories_flex">
-            <p class="section_subtitle">Where do I study?</p>
+            <p class="section_subtitle_small">Where do I study?</p>
             <p class="section_text">I'm a Computer Engineering student at UdeG in CUCEI, located in Guadalajara,
                 Jalisco.</br></p>
 
-            <p class="section_subtitle">Experience and knowledge</p>
+            <p class="section_subtitle_medium">Experience and knowledge</p>
             <p class="section_text">I have mainly developed games using C# and Godot, but I also possess knowledge of
                 both C and C++, focused
                 on algorithms.</br>I'm currently working with Avalonia UI (as part of C#) to build desktop
                 applications.
             </p>
 
-            <p class="section_subtitle">Tecnologies and programming languages</p>
+            <p class="section_subtitle_large">Tecnologies and programming languages</p>
 
             <div class="image_container_about_me_languages">
 
@@ -231,21 +251,23 @@
             </div>
 
             <div class="alexcats1_logo_container">
-                <img class="about_me_images_alexcats1_logo" src="Resources/Images/pixel_art_example1.png" height="100"
-                    width="100" />
+                <a href="https://github.com/AlexCats1">
+                    <img class="about_me_images_alexcats1_logo" src="Resources/Images/pixel_art_example1.png"
+                        height="100" width="100" />
+                </a>
             </div>
 
         </div>
     </div>
 
     <div class="projects_flex">
-        <p class="projects_title">Projects</p>
+        <p class="section_title">Projects</p>
 
         <div class="projects_showcase">
 
             <div class="project1">
                 <img class="projects_showcase_image" src="Resources/Images/minecraft_godot.png" />
-                <p class="section_subtitle">Minecraft Clone</p>
+                <p class="section_subtitle_small">Minecraft Clone</p>
                 <p class="section_text">This is a Minecraft Clone where you can break and place blocks; a
                     little sandbox to play in!</br></br>Developed with Godot 4 and C#.</p>
             </div>
@@ -255,22 +277,26 @@
                 <img class="projects_showcase_image" src="Resources/Images/proclot_sim1.png" />
 
 
-                <p class="section_subtitle">ProcLot Sim</p>
+                <p class="section_subtitle_small">ProcLot Sim</p>
                 <p class="section_text">ProcLot Sim is a desktop application that simulates the old computing
                     that we had</br> in the 50s: batch processing.</br>You can add processes to this app and then start
                     the simulation to see how the processes work.</p>
             </div>
 
             <div class="project3">
+                <a href = "https://alexcats1.itch.io/pixelgems">
                 <img class="projects_showcase_image" src="Resources/Images/pixel_gems.jpg" />
-                <p class="section_subtitle">Pixel Gems</p>
+                </a>
+                <p class="section_subtitle_small">Pixel Gems</p>
                 <p class="section_text">A little game about catching gems that fall from the
                     space!</br></br>Developed with Godot 4 and C#. All the pixel art/assets are created by me.</p>
             </div>
 
             <div class="project4">
+                <a href = "https://www.youtube.com/watch?v=WmMy84zlejY&ab_channel=JAVIERALEJANDROLEDESMAVALDIVIA">
                 <img class="projects_showcase_image" src="Resources/Images/vochos_console.jpg" />
-                <p class="section_subtitle">Vocho's retro-game</p>
+                </a>
+                <p class="section_subtitle_medium">Vocho's retro-game</p>
                 <p class="section_text">A retro-styled game with 8-bit sounds, played on console.</br>In this
                     game you are a car, having to avoid the cars that come against your way. </br>With the help of
                     perks, survive and get the maximum score!</br></br>Developed purely in C++.</p>
@@ -281,7 +307,8 @@
     </div>
 
     <div class="page_footer">
-        <p>&#64;AlexCats1. For more information or any situation contact me at: alexcatsdev&#64;gmail.com. This page is still work in progress.</p>
+        <p>&#64;AlexCats1. For more information or any situation contact me at: alexcatsdev&#64;gmail.com. This page is
+            still work in progress.</p>
     </div>
 </body>
 
