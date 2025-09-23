@@ -1,0 +1,77 @@
+.projects_flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+.project {
+    /* we can group classes and add attributes to them like this, so we don't have to add to every single group.*/
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+}
+
+.projects_image_container {
+    display: flex;
+    flex-wrap: wrap;
+    /* this allows for the content of the flex to break into different columns if it doesnt fit. */
+    flex-direction: row;
+    align-items: center;
+    max-width: 1450px;
+}
+
+.projects_image_container img {
+    margin: 10px;
+    height: 380px;
+    border: 5px solid;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
+    transition: 0.3s;
+}
+
+.projects_image_container img:hover {
+    transform: scale(1.03);
+    opacity: 0.7;
+}
+
+.projects_image_container img.big {
+    height: 500px;
+}
+
+.projects_image_container img.large {
+    height: 200px;
+}
+
+.projects_text_container {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.projects_text_container p.project_description {
+    font-size: 20px;
+    color: white;
+    text-align: justify;
+    max-width: 300px;
+}
+
+.projects_showcase {
+    grid-column: 1;
+    grid-row: 2;
+
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    grid-template-rows: 1fr, 1fr;
+
+    margin: 20px 0 20px 20px;
+}

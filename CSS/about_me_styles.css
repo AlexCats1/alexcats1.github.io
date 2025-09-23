@@ -1,0 +1,42 @@
+.about_me_flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: none;
+    border-right: none;
+    justify-content: center;
+    height: 100vh;
+}
+
+.about_me_categories_flex {
+    display: flex;
+    flex-direction: row;
+    gap: 20vh;
+}
+
+.about_me_image_container_languages {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.programming_language_images_medium {
+    border-radius: 10px;
+    max-height: 60px;
+    object-fit: cover;
+    margin: 10px 10px 10px 10px;
+    transition: 0.3s;
+}
+
+.about_me_text p {
+    font-size: 20px;
+    color: white;
+    text-align: justify;
+    max-width: 450px;
+}
+
+.programming_language_images_medium:hover {
+    transform: scale(1.1);
+    /* when the about_me_images are hovered, we can scale them to have a little animation.*/
+}

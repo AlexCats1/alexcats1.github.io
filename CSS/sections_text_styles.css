@@ -1,0 +1,27 @@
+        .section_subtitle_medium,
+        .section_subtitle_small,
+        .section_subtitle_large,
+        .section_title {
+            font-size: 30px;
+            margin: 0;
+            color: #ffffff;
+            text-align: justify;
+        }
+
+        .section_title {
+            font-size: 35px;
+            margin: 30px 0 30px 0;
+        }
+
+        .section_subtitle_medium {
+            background-size: 400px 100%;
+            /* we specify an exact width so when the page is resized it always stays at this size. it doesnt matter what height we provide, so it's on 100%. */
+        }
+
+        .section_subtitle_small {
+            background-size: 250px 100%;
+        }
+
+        .section_subtitle_large {
+            background-size: 600px 100%;
+        }
