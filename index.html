@@ -12,8 +12,9 @@
         .main_title_flex,
         .projects_flex,
         .about_me_flex,
-        .page_footer {
-            background: #272727;
+        .page_footer,
+        .contact_information_flex {
+            background: #161616;
             border: 5px solid #333;
             border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
             color: white;
@@ -22,9 +23,19 @@
         /* main title*/
         .main_title_flex {
             display: flex;
+            /* we select the flex display, as this is very helpful for automatically sizing things and stuff.*/
             flex-direction: column;
+            /* this is to put the items as column or as row. in this case we want this as row.*/
             align-items: center;
+            /* we use align-items to align them horizontally.*/
+            justify-content: center;
+            /* we use justify content to align the content vertically.*/
             border: none;
+            /* we don't want borders. */
+            height: 100vh;
+            /* we can use vh. this is so the page measures the size of the window and with this the page can automatically resize whenever it's resized. vh = viewport height. */
+            /* in this case we use 100vh because it's the height of the viewport.*/
+            gap: 20px;
         }
 
         /* projects*/
@@ -37,8 +48,10 @@
             border-top: none;
         }
 
-        .projects_showcase_image:hover {
-            transform: scale(1.03);
+        .projects_showcase_languages_container {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
         }
 
         /* about me */
@@ -48,23 +61,14 @@
             align-items: center;
             border-left: none;
             border-right: none;
+            justify-content: center;
+            height: 100vh;
         }
 
         .about_me_categories_flex {
             display: flex;
-            flex-direction: column;
-        }
-
-        .about_me_images {
-            border-radius: 10px;
-            max-height: 60px;
-            object-fit: cover;
-            margin: 20px 0 20px 20px;
-        }
-
-        .about_me_images:hover {
-            transform: scale(1.1);
-            /* when the about_me_images are hovered, we can scale them to have a little animation.*/
+            flex-direction: row;
+            gap: 20vh;
         }
 
         .image_container_about_me_languages {
@@ -86,6 +90,7 @@
             width: 250px;
             object-fit: cover;
             margin: 20px 0 30px 0;
+            transition: 0.3s;
         }
 
         .about_me_images_alexcats1_logo:hover {
@@ -98,21 +103,35 @@
             flex-direction: column;
             align-items: center;
             border: none;
-        }
-
-        .main_title,
-        .main_subtitle {
-            color: rgb(255, 255, 255);
+            height: 5vh;
         }
 
         .main_title {
-            font-size: 45px;
-            margin: 20px 0 20px 0;
+            background: linear-gradient(to right, #ffbd42, #3ef108, #ffbd42);
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            font-size: 65px;
+            animation: main_title_gradient_animation 3s linear infinite;
+            margin: 0;
         }
 
         .main_subtitle {
-            font-size: 30px;
-            margin: 0 0 10px 0;
+            font-size: 45px;
+            color: rgb(255, 255, 255);
+            margin: 0;
+        }
+
+
+        @keyframes main_title_gradient_animation {
+            0% {
+                background-position: 200% 50%;
+            }
+
+            100% {
+                background-position: 0%, 50%;
+            }
+
         }
 
         .section_subtitle_medium,
@@ -121,9 +140,7 @@
         .section_title {
             font-size: 30px;
             margin: 0;
-            background: -webkit-linear-gradient(right, #ffbd42, #3ef108);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ffffff;
         }
 
         .section_title {
@@ -132,15 +149,16 @@
         }
 
         .section_subtitle_medium {
-            background-size: 38% 100%;
+            background-size: 400px 100%;
+            /* we specify an exact width so when the page is resized it always stays at this size. it doesnt matter what height we provide, so it's on 100%. */
         }
 
         .section_subtitle_small {
-            background-size: 26% 100%;
+            background-size: 250px 100%;
         }
 
         .section_subtitle_large {
-            background-size: 60% 100%;
+            background-size: 600px 100%;
         }
 
         .projects_showcase {
@@ -154,33 +172,14 @@
             margin: 20px 0 20px 20px;
         }
 
-        .project1,
-        .project2,
-        .project3,
-        .project4 {
+        .project {
             /* we can group classes and add attributes to them like this, so we don't have to add to every single group.*/
             margin: 20px;
             padding: 10px;
-        }
-
-        .project1 {
-            grid-column: 1;
-            grid-row: 1;
-        }
-
-        .project2 {
-            grid-column: 2;
-            grid-row: 1;
-        }
-
-        .project3 {
-            grid-column: 1;
-            grid-row: 2;
-        }
-
-        .project4 {
-            grid-column: 2;
-            grid-row: 2;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height=60vh;
         }
 
         .section_text {
@@ -188,120 +187,325 @@
             color: white;
         }
 
-        .projects_showcase_image {
-            max-height: 400px;
-            width: 100%;
-            height: 100%;
+        .programming_language_images_medium {
+            border-radius: 10px;
+            max-height: 60px;
+            object-fit: cover;
+            margin: 10px 10px 10px 10px;
+            transition: 0.3s;
+        }
+
+        .gradient_border_wrapper {
+            background: linear-gradient(to top, #636363a1 0%, #535353a1 0%, #3ef10800 100%);
+            border: 3px solid transparent;
+            border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            margin: 5px;
+        }
+
+        .programming_language_images_medium:hover {
+            transform: scale(1.1);
+            /* when the about_me_images are hovered, we can scale them to have a little animation.*/
+        }
+
+        .projects_image_container {
+            display: flex;
+            flex-wrap: wrap;
+            /* this allows for the content of the flex to break into different columns if it doesnt fit. */
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .projects_image_container img {
+            margin: 10px;
+            height: 380px;
             border: 5px solid;
             border-right: none;
             border-left: none;
             border-top: none;
             border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
+            transition: 0.3s;
         }
 
+        .projects_image_container img:hover {
+            transform: scale(1.03);
+            opacity: 0.7;
+        }
+
+        .projects_image_container img.big {
+            height: 500px;
+        }
+
+        .projects_text_container {
+            display: flex;
+            align-items: left;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin: 10px;
+        }
+
+        .navigation_bar {
+            display: flex;
+            position: fixed;
+            z-index: 1;
+            /* with the position fixed, it means thiss will not move from the position it's in, even if we move the page up or down.*/
+
+            background: #161616;
+
+            border: 3px solid #222222;
+
+            border-left: none;
+            border-right: none;
+            border-top: none;
+
+            top: 0;
+            /* this helps us to put the class above of all the other content. */
+
+            align-items: center;
+            justify-content: left;
+            flex-direction: row;
+            padding: 10px;
+
+            height: 6vh;
+            width: 100%;
+            /* width of 100% so it is good.*/
+            gap: 10px;
+        }
+
+        .navigation_bar a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            transition: 0s;
+        }
+
+        .navigation_bar a:hover {
+            transition: 0.1s;
+            background: linear-gradient(to right, #ffbd42, #3ef108, #ffbd42);
+            background-clip: text;
+            color: transparent;
+            background-size: 200%, auto;
+            animation: navigation_options_gradient_animations 2s linear infinite;
+        }
+
+        @keyframes navigation_options_gradient_animations {
+            0% {
+                background-position: 200% 50%;
+            }
+
+            100% {
+                background-position: 0%, 50%;
+            }
+
+        }
+
+        .contact_information_flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-right: none;
+            border-left: none;
+            border-top: none;
+
+            height: 100vh;
+        }
+
+        .contact_information_images_container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .contact_information_images_container img {
+            height: 60px;
+            transition: 0.3s;
+        }
+
+        .contact_information_images_container img:hover {
+            transform: scale(1.1);
+            opacity: 0.7;
+        }
     </style>
     <title>AlexCats1 Portfolio</title>
 </head>
 
 <body>
 
-    <div class="main_title_flex">
+    <div class="navigation_bar">
+        <a href="#home">Home</a>
+        <a href="#about_me">About me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div id="home" class="main_title_flex">
         <p class="main_title">Javier Ledesma | AlexCats1</p> <!-- title of the page-->
         <p class="main_subtitle">Portfolio</p>
     </div>
 
-    <div class="about_me_flex">
+
+    <div id="about_me" class="about_me_flex">
         <p class="section_title">About me</p>
 
         <div class="about_me_categories_flex">
-            <p class="section_subtitle_small">Where do I study?</p>
-            <p class="section_text">I'm a Computer Engineering student at UdeG in CUCEI, located in Guadalajara,
-                Jalisco.</br></p>
 
-            <p class="section_subtitle_medium">Experience and knowledge</p>
-            <p class="section_text">I have mainly developed games using C# and Godot, but I also possess knowledge of
-                both C and C++, focused
-                on algorithms.</br>I'm currently working with Avalonia UI (as part of C#) to build desktop
-                applications.
-            </p>
-
-            <p class="section_subtitle_large">Tecnologies and programming languages</p>
-
+            <div class="section_text">
+                <p>Computer Engineering student at UdeG in CUCEI. </br></br>I have done several games in Godot, as
+                    well as</br>developing applications using Avalonia UI, both using C#.</br>I possess knowledge of C
+                    and C++, oriented to algorithms.</br></br>I consider myself as a fast-learning person,
+                    disciplined</br>and opened to new technologies to learn.</br></br>As a hobby I like to do street
+                    photography and drawing pixel art.</p>
+            </div>
             <div class="image_container_about_me_languages">
 
-                <a href="https://dotnet.microsoft.com/en-us/languages/csharp">
-                    <img class="about_me_images" src="Resources/Images/csharp_logo.png" alt="c#_logo" />
-                </a>
+                <div class="gradient_border_wrapper">
+                    <a href="https://dotnet.microsoft.com/en-us/languages/csharp">
+                        <img class="programming_language_images_medium" src="Resources/Images/csharp_logo.png"
+                            alt="c#_logo" />
+                    </a>
 
-                <a href="https://learn.microsoft.com/en-us/cpp/?view=msvc-170">
-                    <img class="about_me_images" src="Resources/Images/c++_logo.png" alt="c++_logo" />
-                </a>
+                    <a href="https://learn.microsoft.com/en-us/cpp/?view=msvc-170">
+                        <img class="programming_language_images_medium" src="Resources/Images/c++_logo.png"
+                            alt="c++_logo" />
+                    </a>
 
-                <a href="https://learn.microsoft.com/en-us/cpp/?view=msvc-170">
-                    <img class="about_me_images" src="Resources/Images/c_logo.png" alt="c_logo" />
-                </a>
+                    <a href="https://learn.microsoft.com/en-us/cpp/?view=msvc-170">
+                        <img class="programming_language_images_medium" src="Resources/Images/c_logo.png"
+                            alt="c_logo" />
+                    </a>
 
-                <a href="https://godotengine.org/">
-                    <img class="about_me_images" src="Resources/Images/godot_logo.png" alt="godot_logo" />
-                </a>
+                    <a href="https://godotengine.org/">
+                        <img class="programming_language_images_medium" src="Resources/Images/godot_logo.png"
+                            alt="godot_logo" />
+                    </a>
 
-                <a href="https://avaloniaui.net/">
-                    <img class="about_me_images" src="Resources/Images/avalonia_ui_logo.png" alt=avalonia_ui_logo" />
-                </a>
+                    <a href="https://avaloniaui.net/">
+                        <img class="programming_language_images_medium" src="Resources/Images/avalonia_ui_logo.png"
+                            alt=avalonia_ui_logo" />
+                    </a>
+                </div>
             </div>
 
-            <div class="alexcats1_logo_container">
+            <!-- <div class="alexcats1_logo_container">
                 <a href="https://github.com/AlexCats1">
-                    <img class="about_me_images_alexcats1_logo" src="Resources/Images/alexcats1_logo.png"
-                        height="100" width="100" />
+                    <img class="about_me_images_alexcats1_logo" src="Resources/Images/alexcats1_logo.png" />
                 </a>
-            </div>
+            </div> -->
 
         </div>
     </div>
 
-    <div class="projects_flex">
+    <div id="projects" class="projects_flex">
         <p class="section_title">Projects</p>
 
         <div class="projects_showcase">
 
-            <div class="project1">
-                <img class="projects_showcase_image" src="Resources/Images/minecraft_godot.png" />
-                <p class="section_subtitle_small">Minecraft Clone</p>
-                <p class="section_text">This is a Minecraft Clone where you can break and place blocks; a
-                    little sandbox to play in!</br></br>Developed with Godot 4 and C#.</p>
+            <!-- minecraft godot -->
+            <div class="project">
+
+                <div class="projects_image_container">
+                    <div class="projects_image_container_column">
+                        <a href="Resources/Images/minecraft_godot.png" alt="minecraft_godot_1" target="_blank"><img
+                                src=" Resources/Images/minecraft_godot.png"></a>
+                        <a href="Resources/Images/minecraft_godot2.png" alt="minecraft_godot_2" target="_blank"><img
+                                src="Resources/Images/minecraft_godot2.png"></a>
+                        <a href="Resources/Images/minecraft_godot3.png" alt="minecraft_godot_3" target="_blank"><img
+                                src="Resources/Images/minecraft_godot3.png"></a>
+                        <a href="Resources/Images/minecraft_godot4.png" alt="minecraft_godot_4" target="_blank"><img
+                                src="Resources/Images/minecraft_godot4.png"></a>
+                    </div>
+                </div>
+
+                <div class="projects_text_container">
+                    <p class="section_subtitle_large">Minecraft Clone</p>
+                    <p class="section_text">This is a Minecraft Clone where you can break and place blocks; a
+                        little sandbox to play in!</p>
+
+                </div>
             </div>
 
-            <div class="project2">
+            <!-- proclot sim-->
+            <div class="project">
 
-                <img class="projects_showcase_image" src="Resources/Images/proclot_sim1.png" />
+                <div class="projects_text_container">
+                    <p class="section_subtitle_small">ProcLot Sim</p>
+                    <p class="section_text">ProcLot Sim is a desktop application that simulates the old computing</br>
+                        that we had in the 50s: batch processing.</br></br>You can add processes to this app and then
+                        start the simulation to see</br> how the processes work.</p>
+                </div>
 
-                <p class="section_subtitle_small">ProcLot Sim</p>
-                <p class="section_text">ProcLot Sim is a desktop application that simulates the old computing
-                    that we had</br> in the 50s: batch processing.</br>You can add processes to this app and then start
-                    the simulation to see how the processes work.</p>
+                <div class="projects_image_container">
+                    <a href="Resources/Images/proclot_sim1.png" alt="proclot_sim1" target="_blank">
+                        <img class="big" src="Resources/Images/proclot_sim1.png" />
+                    </a>
+
+                    <a href="Resources/Images/proclot_sim2.png" alt="proclot_sim2" target="_blank">
+                        <img class="big" src="Resources/Images/proclot_sim2.png" />
+                    </a>
+                </div>
+
             </div>
 
-            <div class="project3">
-                <a href = "https://alexcats1.itch.io/pixelgems">
-                <img class="projects_showcase_image" src="Resources/Images/pixel_gems.jpg" />
-                </a>
-                <p class="section_subtitle_small">Pixel Gems</p>
-                <p class="section_text">A little game about catching gems that fall from the
-                    space!</br></br>Developed with Godot 4 and C#. All the pixel art/assets are created by me.</p>
+            <!-- pixel gems-->
+            <div class="project">
+                <div class="projects_image_container">
+                    <a href="Resources/Images/pixel_gems1.png" alt="pixel_gems1" target="_blank"><img
+                            src="Resources/Images/pixel_gems1.png"></a>
+                    <a href="Resources/Images/pixel_gems2.png" alt="pixel_gems2" target="_blank"><img
+                            src="Resources/Images/pixel_gems2.png"></a>
+                    <a href="Resources/Images/pixel_gems3.png" alt="pixel_gems3" target="_blank"><img
+                            src="Resources/Images/pixel_gems3.png"></a>
+                    <a href="Resources/Images/pixel_gems4.png" alt="pixel_gems4" target="_blank"><img
+                            src="Resources/Images/pixel_gems4.png"></a>
+                </div>
+
+                <div class="projects_text_container">
+                    <p class="section_subtitle_large">Pixel Gems</p>
+                    <p class="section_text">A little game about catching gems that fall from the
+                        space!</p>
+                </div>
             </div>
 
-            <div class="project4">
-                <a href = "https://www.youtube.com/watch?v=WmMy84zlejY&ab_channel=JAVIERALEJANDROLEDESMAVALDIVIA">
-                <img class="projects_showcase_image" src="Resources/Images/vochos_console.jpg" />
-                </a>
-                <p class="section_subtitle_medium">Vocho's retro-game</p>
-                <p class="section_text">A retro-styled game with 8-bit sounds, played on console.</br>In this
-                    game you are a car, having to avoid the cars that come against your way. </br>With the help of
-                    perks, survive and get the maximum score!</br></br>Developed purely in C++.</p>
+            <div class="project">
+                <div class="projects_image_container">
+                    <a href="Resources/Images/vochos_console.jpg" alt="vochos_console1" target="_blank">
+                        <img src="Resources/Images/vochos_console.jpg" />
+                    </a>
+                </div>
+
+                <div class="projects_text_container">
+                    <p class="section_subtitle_medium">Vocho's retro-game</p>
+                    <p class="section_text">A retro-styled game with 8-bit sounds, played on console.</br>In this
+                        game you are a car, having to avoid the cars that come against your way. </br>With the help of
+                        perks, survive and get the maximum score!</p>
+                </div>
             </div>
 
 
+        </div>
+    </div>
+
+    <div id="contact" class="contact_information_flex">
+        <p class="section_title">Contact</p>
+
+        <p class="section_text">
+            Do you want to contact me? You can do it on my social media:
+        </p>
+
+        <div class="contact_information_images_container">
+            <a href="mailto:alexcatsdev@gmail.com" alt="gmail_icon" target="_blank"><img
+                    src=" Resources/Images/gmail_icon.png"></a>
+            <a href="https://github.com/AlexCats1" alt="github_icon" target="_blank"><img
+                    src=" Resources/Images/github_icon.png"></a>
+            <a href="https://www.linkedin.com/in/javier-alejandro-ledesma-valdivia-b10629313/" alt="linkedin_icon"
+                target="_blank"><img src=" Resources/Images/linkedin_icon.png"></a>
+            <a href="https://www.instagram.com/javild_/" alt="instagram_icon" target="_blank"><img
+                    src=" Resources/Images/instagram_icon.webp"></a>
         </div>
     </div>
 
