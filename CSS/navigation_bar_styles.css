@@ -21,25 +21,26 @@
     padding: 10px;
 
     height: 6vh;
+    min-height: 6vh;
     width: 100%;
     /* width of 100% so it is good.*/
     gap: 10px;
-}
 
-.navigation_bar a {
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
-    transition: 0s;
-}
+    & a {
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        transition: 0s;
+    }
 
-.navigation_bar a:hover {
-    transition: 0.1s;
-    background: linear-gradient(to right, #ffbd42, #3ef108, #ffbd42);
-    background-clip: text;
-    color: transparent;
-    background-size: 200%, auto;
-    animation: navigation_options_gradient_animations 2s linear infinite;
+    & a:hover {
+        transition: 0.1s;
+        background: linear-gradient(to right, #ffbd42, #3ef108, #ffbd42);
+        background-clip: text;
+        color: transparent;
+        background-size: 200%, auto;
+        animation: navigation_options_gradient_animations 2s linear infinite;
+    }
 }
 
 @keyframes navigation_options_gradient_animations {
