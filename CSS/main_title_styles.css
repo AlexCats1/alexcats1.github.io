@@ -10,21 +10,25 @@
     /* we use justify content to align the content vertically.*/
     border: none;
     /* we don't want borders. */
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    margin-top: 50px;
     /* we can use vh. this is so the page measures the size of the window and with this the page can automatically resize whenever it's resized. vh = viewport height. */
     /* in this case we use 100vh because it's the height of the viewport.*/
     gap: 20px;
+
+    & .main_title {
+        background: linear-gradient(to right, #ffbd42, #3ef108, #ffbd42);
+        background-clip: text;
+        color: transparent;
+        background-size: 200% auto;
+        font-size: 4rem;
+        animation: main_title_gradient_animation 3s linear infinite;
+        margin: 0;
+    }
 }
 
-.main_title {
-    background: linear-gradient(to right, #ffbd42, #3ef108, #ffbd42);
-    background-clip: text;
-    color: transparent;
-    background-size: 200% auto;
-    font-size: 65px;
-    animation: main_title_gradient_animation 3s linear infinite;
-    margin: 0;
-}
+
 
 @keyframes main_title_gradient_animation {
     0% {
@@ -35,4 +39,13 @@
         background-position: 0%, 50%;
     }
 
+}
+
+@media screen and (max-width: 850px) {
+
+    .main_title_flex {
+        & .main_title {
+            font-size: 2.5rem;
+        }
+    }
 }

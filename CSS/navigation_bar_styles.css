@@ -20,8 +20,7 @@
     flex-direction: row;
     padding: 10px;
 
-    height: 6vh;
-    min-height: 6vh;
+    height: 50px;
     width: 100%;
     /* width of 100% so it is good.*/
     gap: 10px;
