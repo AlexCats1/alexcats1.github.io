@@ -24,7 +24,7 @@
     /* this allows for the content of the flex to break into different columns if it doesnt fit. */
     flex-direction: row;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     height: auto;
     min-width: 80%;
     max-width: 80%;
